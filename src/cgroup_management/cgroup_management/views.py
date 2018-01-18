@@ -1,3 +1,4 @@
+from django.conf import settings
 from cgroups.common import CgroupsException
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
@@ -7,15 +8,20 @@ from rest_framework.exceptions import APIException
 from cgroups import Cgroup
 
 
+def get_or_create_cgroup(name):
+    try:
+        cg = Cgroup(name, settings.CGROUP_USER)
+    except Exception:
+        # raise APIException(detail='Cgroup error.')
+        raise
+    return cg
+
+
 class CGroupView(APIView):
     parser_classes = (JSONParser,)
 
     def post(self, request, name):
-        try:
-            cg = Cgroup(name)
-        except Exception:
-            raise APIException(detail='Cgroup error.')
-
+        get_or_create_cgroup(name)
         return Response({'Name': name})
 
     def delete(self, request, name):

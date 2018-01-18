@@ -126,3 +126,5 @@ REST_FRAMEWORK = {
         # We don't use any of default classes
     }
 }
+
+CGROUP_USER = 'usertest'
