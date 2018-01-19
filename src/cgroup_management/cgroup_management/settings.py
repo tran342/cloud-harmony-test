@@ -25,7 +25,7 @@ SECRET_KEY = 'f85v7buo95714ylw839-@)9j*cpke2*l$v0%05tqdi88afa2xv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.16.29.234', 'localhost']
 
 
 # Application definition
@@ -128,5 +128,3 @@ REST_FRAMEWORK = {
 }
 
 CGROUP_USER = 'usertest'
-
-ALLOWED_HOSTS = ['172.16.29.234', 'localhost']
