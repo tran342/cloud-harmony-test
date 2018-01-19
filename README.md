@@ -4,7 +4,7 @@
 
 1. After cloning the source code run `pip install -r requirements.txt` to install dependencies
 2. Run `sudo user_cgroups {user}` This will only give the user permissions to manage cgroups in his or her own 
-    sub-directories and process. Then you need to change `CGROUP_USER={user}` in `cgroup_management.settings.py`. The default is `{user} -> usertest`
+    sub-directories and process. Then you need to change `CGROUP_USER={user}` in `cgroup_management.settings.py`. The default is `{user} -> usertest`. Of course, you need to create `usertest` and add it to sudo group.
 3. Run `python manage.py test` to run the test
 4. Run `python manage.py runserver` to run the web app (default at `http://127.0.0.1:8000/`)
 
