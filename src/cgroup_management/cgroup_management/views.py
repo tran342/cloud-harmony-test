@@ -57,10 +57,7 @@ class CGroupPidView(APIView):
         except Exception:
             raise APIException(detail='Not able to add new PID.')
 
-        return Response({
-            'Name': name,
-            'Pid': pid
-        })
+        return Response(pid)
 
     def delete(self, request, name, pid):
         cg = get_or_create_cgroup(name)
