@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. After checking out the source code run `pip install -r requirements.txt` to install dependencies
+1. After cloning the source code run `pip install -r requirements.txt` to install dependencies
 2. Run `sudo user_cgroups {user}` This will only give the user permissions to manage cgroups in his or her own 
     sub-directories and process
 3. Run `python manage.py test` to run the test
