@@ -1,1 +1,31 @@
 # cloud-harmony-test
+
+## Setup
+
+1. After checking out the source code run `pip install -r requirements.txt` to install dependencies
+2. Run `sudo user_cgroups {user}` This will only give the user permissions to manage cgroups in his or her own 
+    sub-directories and process
+3. Run `python manage.py test` to run the test
+4. Run `python manage.py runserver` to run the web app (default at `http://127.0.0.1:8000/`)
+
+## Usage
+
+To create a new cgroup name
+<pre>
+POST /cgroup/{cgroupname}
+</pre>
+
+To get list of PID in a cgroup
+<pre>
+GET /cgroup/{cgroupname}/pid
+</pre>
+
+To add a PID to a cgroup
+<pre>
+PUT /cgroup/{cgroupname}/pid/{pid}
+</pre>
+
+To remove a PID from a cgroup
+<pre>
+DELETE /cgroup/{cgroupname}/pid/{pid}
+</pre>

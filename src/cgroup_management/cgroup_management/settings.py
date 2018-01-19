@@ -128,3 +128,5 @@ REST_FRAMEWORK = {
 }
 
 CGROUP_USER = 'usertest'
+
+ALLOWED_HOSTS = ['172.16.29.234', 'localhost']
